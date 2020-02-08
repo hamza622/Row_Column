@@ -1,0 +1,43 @@
+#include <stdio.h> 
+#include <time.h> 
+#define MAX 10000
+
+
+int arr[MAX][MAX] = {0}; 
+
+void rowMatrix() { 
+int x, y; 
+  
+  for (x = 1; x < MAX; x++) { 
+    for (y = 1; y < MAX; y++) { 
+      arr[x][y]++; 
+    } 
+  } 
+} 
+  
+void colMatrix() { 
+int x, y; 
+  
+  for (x = 1; x < MAX; x++) { 
+    for (y = 1; y < MAX; y++) { 
+      arr[x][y]++; 
+    } 
+  } 
+} 
+  
+int main() { 
+  int x, y; 
+  printf("Hello world\n");
+  clock_t t = clock(); 
+  rowMatrix(); 
+  t = clock() - t; 
+  printf("Row time :%f seconds\n",  
+                t / (float)CLOCKS_PER_SEC); 
+  
+  t = clock(); 
+  colMatrix(); 
+  t = clock() - t; 
+  printf("Column time :%f seconds\n",  
+               t / (float)CLOCKS_PER_SEC); 
+  return 0; 
+} 
